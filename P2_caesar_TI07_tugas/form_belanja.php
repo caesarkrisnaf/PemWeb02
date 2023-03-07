@@ -1,17 +1,15 @@
 <?php
-if(!empty($_POST['nama_cs'])){
-$Nama_customer = $_POST['nama_cs'];
-$Pilih_Produk = $_POST['product'];
-$Jumlah = $_POST['jumlah'];
-if ($Pilih_Produk == 'tv'){
-    $harga_produk = 4200000 * $Jumlah;
-}
-elseif ($Pilih_Produk == 'kulkas') {
-    $harga_produk = 3100000 * $Jumlah;
-}
-else {
-    $harga_produk = 3800000 * $Jumlah;
-}
+if (!empty($_POST['nama_cs'])) {
+    $Nama_customer = $_POST['nama_cs'];
+    $Pilih_Produk = $_POST['product'];
+    $Jumlah = $_POST['jumlah'];
+    if ($Pilih_Produk == 'tv') {
+        $harga_produk = 4200000 * $Jumlah;
+    } elseif ($Pilih_Produk == 'kulkas') {
+        $harga_produk = 3100000 * $Jumlah;
+    } else {
+        $harga_produk = 3800000 * $Jumlah;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -81,30 +79,30 @@ else {
     </div>
     <hr>
     <?php
-    if (!empty($Nama_customer)):
+    if (!empty($Nama_customer)) :
     ?>
-    <table>
-        <tr>
-            <td>Nama Customer&nbsp;:</td>
-          
-            <td><?php echo $Nama_customer; ?></td>
-        </tr>
-        <tr>
-            <td>Pilih Produk&nbsp;:</td>
-            <td><?php echo $Pilih_Produk; ?></td>
-        </tr>
-        <tr>
-            <td>Jumlah Belanja&nbsp;:`</td>
-            <td><?php echo $Jumlah; ?></td>
-        </tr>
-        <tr>
-            <td>Total Belanja&nbsp;:</td>
-            <td>Rp.<?php echo number_format($harga_produk,0,',','.');  ?></td>
-        </tr>
-    </table>
-<?php
-endif;
-?>
+        <table>
+            <tr>
+                <td>Nama Customer&nbsp;:</td>
+
+                <td><?php echo $Nama_customer; ?></td>
+            </tr>
+            <tr>
+                <td>Pilih Produk&nbsp;:</td>
+                <td><?php echo $Pilih_Produk; ?></td>
+            </tr>
+            <tr>
+                <td>Jumlah Belanja&nbsp;:</td>
+                <td><?php echo $Jumlah; ?></td>
+            </tr>
+            <tr>
+                <td>Total Belanja&nbsp;:</td>
+                <td>Rp.<?php echo number_format($harga_produk, 0, ',', '.');  ?></td>
+            </tr>
+        </table>
+    <?php
+    endif;
+    ?>
 
 </body>
 
