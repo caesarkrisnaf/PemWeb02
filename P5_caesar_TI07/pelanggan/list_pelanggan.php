@@ -1,5 +1,5 @@
 <?php
-require_once '../dbkoneksi.php';
+require_once 'dbkoneksi.php';
 ?>
 <?php
 $sql = "select pelanggan.*,kartu.nama as kartu_nama
@@ -9,21 +9,8 @@ kartu ON pelanggan.kartu_id = kartu.id";
 $rs = $dbh->query($sql);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Data Pelanggan</title>
-</head>
-
-<body>
-<a href="index.php" class="btn btn-success btn-md"><span class="fa fa-plus"></span> Tambah</a>
+<div class="container-fluid">
+    <a href="app.php?page=TambahData" class="btn btn-success btn-md"><span class="fa fa-plus"></span> Tambah</a>
     <div class="row">
         <div class="col-md-12">
             <table class="table table-hover">
@@ -56,10 +43,9 @@ $rs = $dbh->query($sql);
                             <td><?= $r['email'] ?></td>
                             <td><?= $r['kartu_nama'] ?></td>
                             <td>
-                                <a class="btn btn-primary" href="view_produk.php?id=<?= $r['id'] ?>">View</a>
-                                <a class="btn btn-primary" href="edit.php?id=<?= $r['id'] ?>">Edit</a>
-                                <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="delete.php?id=<?php echo $r['id'];?>" 
-							class="btn btn-danger btn-md"><span class="fa fa-trash"></span></a>
+                                <a class="btn btn-primary" href="app.php?page=viewProduk&id=<?= $r['id'] ?>">View</a>
+                                <a class="btn btn-primary" href="app.php?page=editProduk&id=<?= $r['id'] ?>">Edit</a>
+                                <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="pelanggan/delete.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-md"><span class="fa fa-trash"></span></a>
                             </td>
                         </tr>
                     <?php
@@ -72,5 +58,4 @@ $rs = $dbh->query($sql);
 
         </div>
     </div>
-
-</html>
+</div>

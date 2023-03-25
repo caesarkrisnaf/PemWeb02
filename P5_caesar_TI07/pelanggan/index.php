@@ -1,5 +1,5 @@
 <?php
-require_once '../dbkoneksi.php';
+require_once 'dbkoneksi.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ require_once '../dbkoneksi.php';
     <div class="container mt-5">
         <h2>Form Produk</h2>
         <br>
-<form action="proses_pelanggan.php" method="POST">  
+<form action="pelanggan/proses_pelanggan.php" method="POST">  
   <div class="form-group row">
     <label for="kode" class="col-4 col-form-label">Kode</label> 
     <div class="col-8">
