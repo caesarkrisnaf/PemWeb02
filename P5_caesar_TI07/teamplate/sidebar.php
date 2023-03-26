@@ -1,16 +1,16 @@
 <?php
 $menus = [
   'Home' => 'index.php',
+  'Pelanggan' => 'app.php?page=pelanggan',
   'Produk' => 'app.php?page=produk',
-  'Profile' => 'app.php?page=profile',
   'Logout' => 'logout.php'
   
 ];
 
 $icons = [
   'Home' => 'fa-tachometer-alt',
-  'Produk' => 'fa-list-alt',
-  'Profile' => 'fa-user',
+  'Pelanggan' => 'fa-list-alt',
+  'Produk' => 'fa-user',
   'Logout' => 'fa-info-circle'
 ];
 ?>

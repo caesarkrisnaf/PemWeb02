@@ -71,16 +71,23 @@ if (isset($_COOKIE['email'])) {
             <!-- /.content-header -->
             <?php
             if (isset($_GET['page'])) {
-                if ($_GET['page'] == "produk") {
+                if ($_GET['page'] == "pelanggan") {
                     include_once('pelanggan/list_pelanggan.php');
-                } else if ($_GET['page'] == "profile") {
-                    include_once('hello.php');
                 } else if ($_GET['page'] == "TambahData") {
                     include_once('pelanggan/index.php');
-                } else if ($_GET['page'] == "editProduk") {
+                } else if ($_GET['page'] == "editpelanggan") {
                     include_once('pelanggan/edit.php');
-                } else if ($_GET['page'] == "viewProduk") {
+                } else if ($_GET['page'] == "viewpelanggan") {
                     include_once('pelanggan/view.php');
+                    //produk
+                } else if ($_GET['page'] == "produk") {
+                    include_once('produk/index.php');
+                } else if ($_GET['page'] == "TambahDataProduk") {
+                    include_once('produk/create_produk.php');
+                } else if ($_GET['page'] == "editProduk") {
+                    include_once('produk/edit.php');
+                } else if ($_GET['page'] == "viewProduk") {
+                    include_once('produk/view.php');
                 } else {
                     include_once 'teamplate/content.php';
                 }

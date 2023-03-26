@@ -43,8 +43,8 @@ $rs = $dbh->query($sql);
                             <td><?= $r['email'] ?></td>
                             <td><?= $r['kartu_nama'] ?></td>
                             <td>
-                                <a class="btn btn-primary" href="app.php?page=viewProduk&id=<?= $r['id'] ?>">View</a>
-                                <a class="btn btn-primary" href="app.php?page=editProduk&id=<?= $r['id'] ?>">Edit</a>
+                                <a class="btn btn-primary" href="app.php?page=viewpelanggan&id=<?= $r['id'] ?>">View</a>
+                                <a class="btn btn-primary" href="app.php?page=editpelanggan&id=<?= $r['id'] ?>">Edit</a>
                                 <a onclick="return confirm('Apakah yakin data akan di hapus?')" href="pelanggan/delete.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-md"><span class="fa fa-trash"></span></a>
                             </td>
                         </tr>

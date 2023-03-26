@@ -35,7 +35,7 @@ if (isset($sql)) {
     $st->execute($ar_data);
 }
 
-header('location:../app.php?page=produk');
+header('location:../app.php?page=pelanggan');
 ?>
 
 

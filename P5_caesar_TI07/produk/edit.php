@@ -2,7 +2,7 @@
 require_once 'dbkoneksi.php';
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM pelanggan WHERE id = ?";
+$sql = "SELECT * FROM produk WHERE id = ?";
 $r = $dbh->prepare($sql);
 $r->execute(array($id));
 $hasil = $r->fetch();
@@ -26,10 +26,10 @@ $hasil = $r->fetch();
 <body>
     <div class="container mt-5">
         <h2>
-            Edit Data Pelanggan
+            Edit Data Produk
         </h2>
         <br>
-        <form action="pelanggan/proses_pelanggan.php" method="POST">
+        <form action="produk/proses_produk.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $hasil['id']; ?>">
             <div class="form-group row">
                 <label for="kode" class="col-4 col-form-label">Kode</label>
@@ -45,7 +45,7 @@ $hasil = $r->fetch();
                 </div>
             </div>
             <div class="form-group row">
-                <label for="nama" class="col-4 col-form-label">Nama</label>
+                <label for="nama" class="col-4 col-form-label">Nama Produk</label>
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -58,33 +58,20 @@ $hasil = $r->fetch();
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-4">Jenis Kelamin</label>
-                <div class="col-8">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input name="jk" id="jk_0" type="radio" class="custom-control-input" value="L" <?= $hasil['jk'] == 'L' ? 'checked' : '' ?>>
-                        <label for="jk_0" class="custom-control-label">Laki-Laki</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input name="jk" id="jk_1" type="radio" class="custom-control-input" value="P" <?= $hasil['jk'] == 'P' ? 'checked' : '' ?>>
-                        <label for="jk_1" class="custom-control-label">Perempuan</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label>
+                <label for="nama" class="col-4 col-form-label">Harga Beli</label>
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <i class="fa fa-address-card-o"></i>
+                                <i class="fa fa-address-book"></i>
                             </div>
                         </div>
-                        <input id="tmp_lahir" name="tmp_lahir" placeholder="Masukan Tempat Lahir " type="text" class="form-control" required="required" value="<?php echo $hasil['tmp_lahir']; ?>">
+                        <input id="harga_beli" name="harga_beli" placeholder="Massukan Harga Beli" type="text" class="form-control" required="required" value="<?php echo $hasil['harga_beli']; ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="tgl_lahir" class="col-4 col-form-label">Tanggal Lahir</label>
+                <label for="tgl_lahir" class="col-4 col-form-label">Stok</label>
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -92,37 +79,36 @@ $hasil = $r->fetch();
                                 <i class="fa fa-align-right"></i>
                             </div>
                         </div>
-                        <input id="tgl_lahir" name="tgl_lahir" type="date" class="form-control" value="<?php echo $hasil['tgl_lahir']; ?>">
+                        <input id="stok" name="stok" type="text" class="form-control" value="<?php echo $hasil['stok']; ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="email" class="col-4 col-form-label">Email</label>
+                <label for="email" class="col-4 col-form-label">Minium Stok</label>
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <i class="fa fa-envelope"></i>
                             </div>
                         </div>
-                        <input id="email" name="email" placeholder="Massukan Email Anda" type="text" class="form-control" value="<?php echo $hasil['email']; ?>">
+                        <input id="min_stok" name="min_stok" type="text" class="form-control" value="<?php echo $hasil['min_stok'] ?>">
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="id_kartu" class="col-4 col-form-label">Kartu</label>
+                <label for="jenis" class="col-4 col-form-label">Jenis Produk</label>
                 <div class="col-8">
                     <?php
-                    $sqljenis = "SELECT * FROM kartu";
+                    $sqljenis = "SELECT * FROM jenis_produk";
                     $rsjenis = $dbh->query($sqljenis);
                     ?>
-                    <select id="kartu_id" name="kartu_id" class="custom-select" value="" <?php foreach ($rsjenis as $rowjenis) {
-                                                                                            ?> <option value="<?= $rowjenis['id'] ?>" <?php if ($hasil['kartu_id'] == $rowjenis['id']) {
-                                                                                                                                            echo 'selected';
-                                                                                                                                        } ?>>
+                    <select id="jenis" name="jenis" class="custom-select" value="" <?php foreach ($rsjenis as $rowjenis) {
+                                                                                    ?> <option value="<?= $rowjenis['id'] ?>" <?php if ($hasil['jenis_produk_id'] == $rowjenis['id']) {
+                                                                                                                                    echo 'selected';
+                                                                                                                                } ?>>
                         <?= $rowjenis['nama'] ?></option>
                     <?php
-                                                                                            }
+                                                                                    }
                     ?>
 
                     </select>
