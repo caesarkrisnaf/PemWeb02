@@ -3,6 +3,9 @@ $menus = [
   'Home' => 'index.php',
   'Pelanggan' => 'app.php?page=pelanggan',
   'Produk' => 'app.php?page=produk',
+  'Kartu' => 'app.php?page=kartu',
+  'Pembelian' => 'app.php?page=pembelian',
+  'Vendor' => 'app.php?page=vendor',
   'Logout' => 'logout.php'
   
 ];
@@ -11,6 +14,9 @@ $icons = [
   'Home' => 'fa-tachometer-alt',
   'Pelanggan' => 'fa-list-alt',
   'Produk' => 'fa-user',
+  'Kartu' => 'fas fa-sd-card',
+  'Pembelian' => 'fad fa-shopping-bag',
+  'Vendor' => 'fas fa-shuttle-van',
   'Logout' => 'fa-info-circle'
 ];
 ?>

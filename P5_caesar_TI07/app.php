@@ -88,6 +88,33 @@ if (isset($_COOKIE['email'])) {
                     include_once('produk/edit.php');
                 } else if ($_GET['page'] == "viewProduk") {
                     include_once('produk/view.php');
+                    //kartu
+                } else if ($_GET['page'] == "kartu") {
+                    include_once('kartu/index.php');
+                } else if ($_GET['page'] == "TambahDataKartu") {
+                    include_once('kartu/create_kartu.php');
+                } else if ($_GET['page'] == "editKartu") {
+                    include_once('kartu/edit.php');
+                } else if ($_GET['page'] == "viewKartu") {
+                    include_once('kartu/view.php');
+                    //pembelian
+                } else if ($_GET['page'] == "pembelian") {
+                    include_once('pembelian/index.php');
+                } else if ($_GET['page'] == "TambahDataPembelian") {
+                    include_once('pembelian/create_pembelian.php');
+                } else if ($_GET['page'] == "editPembelian") {
+                    include_once('pembelian/edit.php');
+                } else if ($_GET['page'] == "viewPembelian") {
+                    include_once('pembelian/view.php');
+                    //vendor
+                } else if ($_GET['page'] == "vendor") {
+                    include_once('vendor/index.php');
+                } else if ($_GET['page'] == "TambahDataVendor") {
+                    include_once('vendor/create_vendor.php');
+                } else if ($_GET['page'] == "editVendor") {
+                    include_once('vendor/edit.php');
+                } else if ($_GET['page'] == "viewVendor") {
+                    include_once('vendor/view.php');
                 } else {
                     include_once 'teamplate/content.php';
                 }
